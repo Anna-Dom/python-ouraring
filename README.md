@@ -1,7 +1,7 @@
 
 ## Installation
 
-Install from github `pip install git+https://github.com/Anna-Dom/python-ouraring#egg=python-ouraring
+Install from github `pip install git+https://github.com/Anna-Dom/python-ouraring#egg=python-ouraring`
 
 ## Project maintenance
 If anyone is interested in taking over maintenance of this project, please contact me at
