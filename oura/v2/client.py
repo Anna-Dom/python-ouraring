@@ -90,6 +90,12 @@ class OuraClientV2:
     def workouts(self, start_date=None, end_date=None, next_token=None):
         return self._get_summary(start_date, end_date, next_token, "workout")
 
+    def daily_cardiovascular_age(self, start_date=None, end_date=None, next_token=None):
+        return self._get_summary(start_date, end_date, next_token, "daily_cardiovascular_age")
+
+    def daily_resilience(self, start_date=None, end_date=None, next_token=None):
+        return self._get_summary(start_date, end_date, next_token, "daily_resilience")
+
     def _get_summary(self, start_date, end_date, next_token, summary_type):
         url = self._build_summary_url(start_date, end_date, next_token, summary_type)
         return self._make_request(url)
@@ -127,3 +133,6 @@ class OuraClientV2:
         exceptions.detect_and_raise_error(response)
         payload = json.loads(response.content.decode("utf8"))
         return payload
+
+    def refresh_token(self):
+        return self._auth_handler._refresh_token()
